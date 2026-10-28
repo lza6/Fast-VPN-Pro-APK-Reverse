@@ -83,8 +83,9 @@ python demo_server.py      # http://127.0.0.1:8955/
 | `merge_fallback.py` | 把内置兜底节点合入 `nodes.json` |
 | `build_mihomo.py` | 生成 N 端口 mihomo 配置（每节点一个 socks listener） |
 | `stress.py` | 裸 SOCKS5 压测（真实出口 IP / 延迟 / 吞吐） |
+| `health_loop.py` | **常驻健康检查**：出口 IP 校验 + 双阈值摘除 + 原子重写 `proxies.txt` |
 | `bench.py` | 顺序延迟 + 8 并发 + 链路带宽上限对照 |
-| `pool_cycle.py` | 一键闭环 |
+| `pool_cycle.py` | 一键闭环（收割 → 配置 → 重启 → 压测 → 清单） |
 | `demo_server.py` + `demo.html` | 池子面板 `:8955`（节点 / 统计 / 实时探测 / 重新拉取 / 代理清单） |
 | `docs/PROTOCOL.md` | **实现手册**：常量表 / key 派生 / 信封 / 字段表 / 最小骨架 / 必避坑 |
 | `docs/REVERSE_REPORT.md` | 完整逆向报告（架构 / 密钥链 / 接口清单 / 测活 / 合规） |
